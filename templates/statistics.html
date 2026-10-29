@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Statistics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Trading Strategy Dashboard</div>
+        <div class="nav-links">
+            <a href="/">Price Chart</a>
+            <a href="/statistics" class="active">Trade Statistics</a>
+            <a href="/trades">Detailed Trades</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Overall Trade Statistics</h1>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span>Total Trades</span>
+                <strong>{{ stats.total_trades }}</strong>
+            </div>
+            <div class="stat-card">
+                <span>Winning Trades</span>
+                <strong>{{ stats.winning_trades }}</strong>
+            </div>
+            <div class="stat-card">
+                <span>Losing Trades</span>
+                <strong>{{ stats.losing_trades }}</strong>
+            </div>
+            <div class="stat-card">
+                <span>Win Rate</span>
+                <strong>{{ stats.win_rate }}%</strong>
+            </div>
+            <div class="stat-card">
+                <span>Average Profit</span>
+                <strong>{{ stats.average_profit }}%</strong>
+            </div>
+            <div class="stat-card">
+                <span>Average Holding Days</span>
+                <strong>{{ stats.average_holding_days }}</strong>
+            </div>
+            <div class="stat-card">
+                <span>Average Win</span>
+                <strong>{{ stats.average_win }}%</strong>
+            </div>
+            <div class="stat-card">
+                <span>Average Loss</span>
+                <strong>{{ stats.average_loss }}%</strong>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
